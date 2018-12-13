@@ -23,7 +23,7 @@ body {
   font-size: 40px;
 }
 .nav-pic {
-  margin-left: 40.5%;
+  margin-right: 2%;
   height: 60px;
   width: 60px;
 }
@@ -97,7 +97,7 @@ button {
   background-color: #ccc;
 }
 .trigger-popup-fricc {
-  margin-left: 45.5%;
+  margin-left: 46.5%;
 }
 .hover_bkgr_fricc1 {
   background: rgba(0, 0, 0, 0.4);
@@ -133,7 +133,7 @@ button {
   text-align: center;
 } */
 #data-list {
-  margin-left: 40%;
+  margin-left: 41.5%;
   text-align: center;
 }
 .edit {
