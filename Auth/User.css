@@ -5,6 +5,9 @@ body {
   display: grid;
   grid-template-rows: 1fr auto;
 }
+.main-content {
+  margin-bottom: 20px;
+}
 #no-data-header {
   text-align: center;
   margin-top: 10%;
@@ -141,6 +144,7 @@ button {
   font-size: 20px;
 }
 .footer {
+  overflow: hidden;
   grid-row-start: 2;
   grid-row-end: 3;
   width: 100%;
@@ -154,7 +158,6 @@ button {
   padding-bottom: 5px;
   text-align: center;
   position: relative;
-  top: -10%;
 }
 .social-media {
   text-align: center;
