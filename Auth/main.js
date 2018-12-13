@@ -10,8 +10,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       .on("value", function(snapshot) {
         const noData = snapshot.val() === null;
         if (noData) {
+          document.getElementById("loading-header").style.display = "none";
           document.getElementById("no-data-header").style.display = "block";
         } else if (!noData) {
+          document.getElementById("loading-header").style.display = "none";
           document.getElementById("data-list").style.display = "block";
           data = Object.keys(snapshot.val());
           data.map(function(value) {

@@ -171,3 +171,9 @@ button {
   background-color: #009933;
   color: white;
 }
+.fa:hover {
+  color: white;
+}
+#loading-header {
+  text-align: center;
+}

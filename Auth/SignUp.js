@@ -3,7 +3,7 @@ function onClick() {
   var password = document.getElementById("password").value;
   var passwordCheck = document.getElementById("password-check").value;
 
-  if (email === "" || password === "") {
+  if (!email || !password) {
     $("#warn").text("Must enter an email or password");
   } else if (password.length < 6) {
     $("#warn").text("Password must be at least 6 characters");
