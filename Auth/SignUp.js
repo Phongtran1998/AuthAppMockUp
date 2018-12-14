@@ -24,11 +24,6 @@ function onClick() {
 function checkPassword() {
   var x = document.getElementById("password");
   var y = document.getElementById("password-check");
-  if (x.type === "password" && y.type === "password") {
-    x.type = "text";
-    y.type = "text";
-  } else {
-    x.type = "password";
-    y.type = "password";
-  }
+  x.type = x.type === "password" ? "text" : "password";
+  y.type = y.type === "password" ? "text" : "password";
 }

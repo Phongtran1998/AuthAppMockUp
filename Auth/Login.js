@@ -22,11 +22,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 function checkPassword() {
   var x = document.getElementById("password");
   var y = document.getElementById("password-check");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
+  x.type = x.type === "password" ? "text" : "password";
 }
 var signIPassword = document.getElementById("password");
 var signInEmail = document.getElementById("email");
