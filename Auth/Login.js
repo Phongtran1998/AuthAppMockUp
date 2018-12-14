@@ -1,6 +1,3 @@
-function nav() {
-  location.href = "SignUp.html";
-}
 function onClick() {
   var email = document.getElementById("email").value;
   var password = document.getElementById("password").value;
