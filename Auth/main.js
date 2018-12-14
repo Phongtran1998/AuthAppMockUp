@@ -46,13 +46,13 @@ firebase.auth().onAuthStateChanged(function(user) {
                 .ref("/user/" + username.uid + "/" + value)
                 .on("value", function(snap) {
                   const value = snap.val();
-                  const editName = document.getElementById("edit-name").value;
-                  const editPhone = document.getElementById("edit-phone").value;
-                  editName = value.Name;
-                  editPhone = value.Phone;
+                  const editName = document.getElementById("edit-name");
+                  const editPhone = document.getElementById("edit-phone");
+                  editName.value = value.Name;
+                  editPhone.value = value.Phone;
                   document.getElementById("edit-button").onclick = function() {
                     if (
-                      editName === value.Name &&
+                      editName.value === value.Name &&
                       editPhone.value === value.Phone
                     ) {
                       alert("You haven't made any changes");
