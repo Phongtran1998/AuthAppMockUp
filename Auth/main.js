@@ -23,11 +23,11 @@ firebase.auth().onAuthStateChanged(function(user) {
               .ref("/user/" + username.uid + "/" + value)
               .on("value", function(snapshot) {
                 $("#data-list").append(
-                  "<div class='card'><div class='content'><span class='header-text'><b>Name: </b></span><span class='info'>" +
+                  "<div class='card'><div class='content'><div class='inner-content'><span class='header-text'><b>Name: </b></span><span class='info'>" +
                     snapshot.val().Name +
-                    "</span><br><span class='header-text'><b>Phone: </b></span><span class='info'>" +
+                    "</span></div><div class='inner-content'><span class='header-text'><b>Phone: </b></span><span class='info'>" +
                     snapshot.val().Phone +
-                    "<br><button type=button class='edit'>Edit</button></div></div>"
+                    "</span></div><div class='inner-content' style='text-align: right'><button type=button class='edit'>Edit</button></div></div></div>"
                 );
               });
           });

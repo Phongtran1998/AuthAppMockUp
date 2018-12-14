@@ -129,14 +129,19 @@ button {
   padding: 15px 5%;
 }
 /* Popup box BEGIN */
-/* .content {
-  text-align: center;
-} */
+.content {
+  display: flex;
+  padding: 10px 30px;
+}
 #data-list {
   margin: 0 auto;
   margin-top: 10px;
   margin-bottom: 20px;
   text-align: center;
+}
+.inner-content {
+  flex: 1;
+  text-align: left;
 }
 .edit {
   background-color: red;
