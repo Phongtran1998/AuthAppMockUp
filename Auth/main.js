@@ -48,6 +48,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                   const value = snap.val();
                   const editName = document.getElementById("edit-name");
                   const editPhone = document.getElementById("edit-phone");
+                  const isNumberEdit = isNum(editPhone);
                   editName.value = value.Name;
                   editPhone.value = value.Phone;
                   document.getElementById("edit-button").onclick = function() {
@@ -56,6 +57,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                       editPhone.value === value.Phone
                     ) {
                       alert("You haven't made any changes");
+                    } else if (!isNumberEdit) {
+                      alert("Phone must be number");
                     } else {
                       firebase
                         .database()
@@ -86,15 +89,20 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("add-button").onclick = function() {
       const name = document.getElementById("name").value;
       const phone = document.getElementById("phone").value;
-      firebase
-        .database()
-        .ref("user/" + username.uid)
-        .push({
-          Name: name,
-          Phone: phone
-        });
-      $(".hover_bkgr_fricc").hide();
-      document.location.reload(true);
+      const isNumber = isNum(phone);
+      if (isNumber) {
+        firebase
+          .database()
+          .ref("user/" + username.uid)
+          .push({
+            Name: name,
+            Phone: phone
+          });
+        $(".hover_bkgr_fricc").hide();
+        document.location.reload(true);
+      } else {
+        alert("Phone must be a number");
+      }
     };
     document.getElementById("sign-out").onclick = function() {
       firebase
@@ -106,3 +114,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     };
   }
 });
+function isNum(phone) {
+  return (
+    !isNaN(phone) &&
+    (function(x) {
+      return (x | 0) === x;
+    })(parseFloat(phone))
+  );
+}
