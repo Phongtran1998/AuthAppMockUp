@@ -38,7 +38,7 @@ body {
 button {
   border: none;
   color: white;
-  padding: 10px 25px;
+  padding: 6px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -140,6 +140,8 @@ button {
 }
 .edit {
   background-color: red;
+  padding: 6px 50px;
+  border-radius: 10%;
 }
 .header-text,
 .info {
@@ -179,4 +181,8 @@ button {
 }
 #loading-header {
   text-align: center;
+}
+.container-card {
+  width: 60%;
+  margin: 0 auto;
 }
